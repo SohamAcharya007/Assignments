@@ -1,17 +1,14 @@
 #include <stdio.h>
 
-int fib(int n) {
-    if(n <= 1)
-        return n;
-    return fib(n-1) + fib(n-2);
+int gcd(int a, int b) {
+    if(b == 0)
+        return a;
+    return gcd(b, a % b);
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
-
-    for(int i = 0; i < n; i++)
-        printf("%d ", fib(i));
-
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("GCD = %d", gcd(a, b));
     return 0;
 }
